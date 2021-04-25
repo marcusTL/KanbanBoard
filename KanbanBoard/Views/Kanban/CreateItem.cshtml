@@ -1,0 +1,38 @@
+﻿@using Microsoft.Data.SqlClient.DataClassification
+@model KanbanBoard.Models.Item
+@{
+    ViewData["Title"] = "CreateItem";
+}
+
+<h1>CreateItem</h1>
+
+<div>
+    <form method="post" asp-action="CreateItem">
+        <div class="form-group">
+            <label asp-for="@Model.Title">Title</label>
+            <input asp-for="@Model.Title" class="form-control" />
+            <span asp-validation-for="@Model.Title" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="@Model.Description">Description</label>
+            <input asp-for="@Model.Description" class="form-control" />
+            <span asp-validation-for="@Model.Description" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="@Model.BoardState">Boardstate</label>
+            <select asp-for="@Model.BoardState" class="form-control" asp-items="Html.GetEnumSelectList<BoardState>()">
+            </select>
+            <span asp-validation-for="@Model.BoardState" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Create" class="btn btn-primary" />
+        </div>
+
+    </form>
+    </div>
+    <div>
+        <a asp-action="Index" class="btn btn-primary"> Back to the Main List </a>
+    </div>
