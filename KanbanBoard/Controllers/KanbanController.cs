@@ -5,7 +5,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using KanbanBoard.Data;
 using KanbanBoard.Models;
-using KanbanBoard.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Data.SqlClient;
@@ -15,6 +14,7 @@ namespace KanbanBoard.Controllers
 {
     public class KanbanController : Controller
     {
+
         private readonly ApplicationDbContext _dbContext;
 
 
